@@ -1,0 +1,7 @@
+# Commit Message Guidelines
+- Follow conventional commits format
+- Use type(scope): description
+- Types: feat, fix, docs, style, refactor, test, chore
+- First line max 50 chars
+- Use imperative mood
+- No period at end
