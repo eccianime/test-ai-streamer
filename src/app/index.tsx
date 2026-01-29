@@ -1,8 +1,9 @@
 import AppHeader from '@/components/app-header';
 import BottomInput from '@/components/bottom-input';
-import { KeyboardAvoidingView, Platform, StatusBar, Text, View } from 'react-native';
+import ChatScreen from '@/components/chat-screen';
+import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 
-export default function ChatScreen() {
+export default function App() {
   return (
     <KeyboardAvoidingView
       className="pt-safe flex-1 bg-white"
@@ -10,7 +11,7 @@ export default function ChatScreen() {
     >
       <StatusBar barStyle="dark-content" />
       <AppHeader />
-      <View className="flex-1" />
+      <ChatScreen />
       <BottomInput />
     </KeyboardAvoidingView>
   );
