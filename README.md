@@ -4,7 +4,7 @@ A single-screen chat interface that simulates an AI assistant streaming response
 
 ## Demo
 
-https://github.com/eccianime/test-ai-streamer/blob/main/demo.mp4
+https://github.com/user-attachments/assets/b8e5b1f5-90f2-469d-8f54-d29716a1b263
 
 # Features
 
