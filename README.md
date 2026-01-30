@@ -4,7 +4,7 @@ A single-screen chat interface that simulates an AI assistant streaming response
 
 ## Demo GIF
 
-![AI Streamer Demo](./demo.gif)
+![AI Streamer Demo](./demo.mp4)
 
 # Features
 
