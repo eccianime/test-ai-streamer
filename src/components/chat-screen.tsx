@@ -3,6 +3,8 @@ import { useChatStore } from '@/store/useChatStore';
 import { FlashList, FlashListRef } from '@shopify/flash-list';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { NativeScrollEvent, NativeSyntheticEvent, Text, View } from 'react-native';
+import MessageItem from './message-item';
+import EmptyView from './empty-view';
 
 export default function ChatScreen() {
   const messages = useChatStore((s) => s.messages);
@@ -29,6 +31,10 @@ export default function ChatScreen() {
     return <MessageItem message={item} />;
   }, []);
 
+  if (messages.length === 0) {
+    return <EmptyView />;
+  }
+
   return (
     <FlashList
       ref={listRef}
@@ -37,27 +43,7 @@ export default function ChatScreen() {
       keyExtractor={(item) => item.id}
       onScroll={handleScroll}
       scrollEventThrottle={16}
-      contentContainerStyle={{ padding: 12 }}
+      contentContainerClassName={`p-3`}
     />
   );
 }
-
-// ---------- MESSAGE ITEM (AISLADO) ----------
-const MessageItem = React.memo(({ message }: { message: Message }) => {
-  const isUser = message.role === 'user';
-
-  return (
-    <View
-      style={{
-        alignSelf: isUser ? 'flex-end' : 'flex-start',
-        backgroundColor: isUser ? '#007AFF' : '#e5e5ea',
-        padding: 10,
-        borderRadius: 12,
-        marginVertical: 4,
-        maxWidth: '80%',
-      }}
-    >
-      <Text style={{ color: isUser ? 'white' : 'black' }}>{message.content}</Text>
-    </View>
-  );
-});

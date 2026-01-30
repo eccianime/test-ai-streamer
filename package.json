@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --dev-client -c",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
@@ -21,6 +21,7 @@
     "nativewind": "^4.2.1",
     "react": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-markdown-display": "^7.0.2",
     "react-native-reanimated": "^4.2.1",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.16.0",
