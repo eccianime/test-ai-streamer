@@ -13,6 +13,7 @@ type ChatState = {
   appendToken: (id: string, token: string) => void;
   startStream: (id: string) => void;
   stopStream: () => void;
+  resetChat: () => void;
 };
 
 export type { Message, ChatState };

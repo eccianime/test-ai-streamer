@@ -1,11 +1,11 @@
 import { colors } from '@/config/colors';
-import { MOCK_RESPONSE } from '@/mock/mock-response';
+import { POSSIBLE_RESPONSES } from '@/mock/mock-response';
 import { Message } from '@/store/types';
 import { useChatStore } from '@/store/useChatStore';
 import { uuidv4 } from '@/utils/crypto';
 import { startMockStream, stopMockStream } from '@/utils/stream-engine';
 import { Ionicons } from '@expo/vector-icons';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function BottomInput() {
@@ -36,7 +36,10 @@ export default function BottomInput() {
     });
 
     store.startStream(botId);
-    startMockStream(MOCK_RESPONSE, botId);
+    startMockStream(
+      POSSIBLE_RESPONSES[Math.floor(Math.random() * POSSIBLE_RESPONSES.length)],
+      botId
+    );
 
     setText('');
   }, [text]);
@@ -44,7 +47,7 @@ export default function BottomInput() {
   return (
     <View className="android:pb-safe flex-row gap-3 border-t border-t-gray-200 bg-white p-6">
       <TextInput
-        className="border-border font-poppins-regular min-h-14 flex-1 justify-center rounded-2xl border-2 bg-white px-6 text-sm text-gray-700"
+        className="min-h-14 flex-1 justify-center rounded-2xl border-2 border-border bg-white px-6 font-poppins-regular text-sm text-gray-700"
         placeholder="Pregúntame lo que quieras"
         placeholderTextColor={colors.placeholder}
         value={text}

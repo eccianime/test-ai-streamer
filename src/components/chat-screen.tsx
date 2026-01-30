@@ -1,10 +1,10 @@
 import { Message } from '@/store/types';
 import { useChatStore } from '@/store/useChatStore';
 import { FlashList, FlashListRef } from '@shopify/flash-list';
-import React, { useCallback, useEffect, useRef } from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, Text, View } from 'react-native';
-import MessageItem from './message-item';
+import { useCallback, useEffect, useRef } from 'react';
+import { NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import EmptyView from './empty-view';
+import MessageItem from './message-item';
 
 export default function ChatScreen() {
   const messages = useChatStore((s) => s.messages);
