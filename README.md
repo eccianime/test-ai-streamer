@@ -2,9 +2,9 @@
 
 A single-screen chat interface that simulates an AI assistant streaming responses in real time. Built with Expo (React Native) and TypeScript. Focused on streaming state updates, list performance, and clean architecture.
 
-## Demo GIF
+## Demo MP4
 
-![AI Streamer Demo](./demo.mp4)
+[Demo](https://github.com/eccianime/test-ai-streamer/blob/main/demo.mp4)
 
 # Features
 
